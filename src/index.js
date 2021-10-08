@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import 'macro-css'; 
-// import Winter from './winter/Winter'
+// import Autumn from './autumn/Autumn'
 
 
 ReactDOM.render(

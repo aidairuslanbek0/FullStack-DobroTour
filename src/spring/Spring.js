@@ -3,10 +3,17 @@ function Spring(){
       <div className="wrapper clear">
       
       <div className="content p-40 ">
-        <h1>Весенние Туры</h1>
+       
+      <div className="d-flex align-center justify-between mb-40">
+         <h1>Весенние Туры</h1>
+         <div className="search-block d-flex">
+            <img src="img/search.svg" alt="Search" />
+            <input placeholder="Поиск..." />
+         </div>
+         </div>
   
          <div className="d-flex ">
-         <div className="card">
+         {/* <div className="card">
            <img width={200} height={240} src ="img/photos/autumn.jpg" alt="witer" />
            <h3>Осенние Туры</h3>
            <div className="d-flex justify-between align-center">
@@ -14,6 +21,9 @@ function Spring(){
                <span>Цена:</span>
                <b>3500 сом</b>
              </div>
+             <button className="favourite">
+                 <img src="/img/heartunlike.svg" />
+            </button>
                <button className="button">
                  <img width={11} height={11} src="/img/plus.svg" alt="Plus" />
                </button>             
@@ -28,6 +38,9 @@ function Spring(){
                <span>Цена:</span>
                <b>3500 сом</b>
              </div>
+             <button className="favourite">
+                 <img src="/img/heartunlike.svg" />
+            </button>
                <button className="button">
                  <img width={11} height={11} src="/img/plus.svg" alt="Plus" />
                </button>             
@@ -42,6 +55,9 @@ function Spring(){
                <span>Цена:</span>
                <b>3500 сом</b>
              </div>
+             <button className="favourite">
+                 <img src="/img/heartunlike.svg" />
+            </button>
                <button className="button">
                  <img width={11} height={11} src="/img/plus.svg" alt="Plus" />
                </button>             
@@ -56,11 +72,14 @@ function Spring(){
                <span>Цена:</span>
                <b>3500 сом</b>
              </div>
+             <button className="favourite">
+                 <img src="/img/heartunlike.svg" />
+            </button>
                <button className="button">
                  <img width={11} height={11} src="/img/plus.svg" alt="Plus" />
                </button>             
            </div>
-        </div>
+        </div> */}
          </div>
   
       </div>
