@@ -1,0 +1,43 @@
+.content {  
+    h1{
+      margin: 0;
+      }
+  }
+ 
+  .card{
+    background-color: #5CDB95;
+   //  border: 1px solid #F8F8F8;
+    padding: 14px;
+    width: 230px;
+    height: 350px;
+    border-radius: 20px;
+    margin-right: 30px;
+ 
+    span{
+      font-size: 12px;
+      opacity: 0.5;
+      text-transform: uppercase;
+    }
+ 
+    b{
+      font-size: 13px;
+    }
+ 
+    img{
+      border-radius: 10px;
+    }
+    h3{
+      font-size: 20px;
+ 
+    }
+   }
+ 
+   .button{
+     background: #c1ffd9;
+     border: 3px solid #5CDB95;
+     box-sizing: border-box;
+     border-radius: 8px;
+     height: 32px;
+     width: 32px;
+     cursor: pointer;
+   }
