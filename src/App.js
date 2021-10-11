@@ -1,9 +1,11 @@
 import React from 'react'
 import axios from 'axios'
-import Card from './components/Card'
+import {Route} from 'react-router-dom'
 import Header from './components/Header'
 import Drawer from './components/Drawer'
 import Video from './components/Video'
+import Home from './pages/Home'
+import Favourites from './pages/Favourites'
 
 
 function App() {
@@ -20,6 +22,9 @@ function App() {
     })
     axios.get('https://61610e44faa03600179fbc04.mockapi.io/cart').then((res) =>{
       setCartItems(res.data)
+    })
+    axios.get('https://61610e44faa03600179fbc04.mockapi.io/favourite').then((res) =>{
+      setFavourites(res.data)
     })
    }, [] );
 
@@ -57,41 +62,23 @@ const onChangeSearchInput = (event) => {
     <Header 
     onClickCart={() => setCartOpened(true)}
      />
+   <Route path="/" exact>
+      <Video />
+      <Home items = {items} 
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+      />
 
-    <Video />
+    </Route>
     
-      <div className="content p-40 ">
-         <div className="d-flex align-center justify-between mb-40">
-         <h1>Все Туры</h1>
-         <div className="search-block d-flex">
-            <img src="img/search.svg" alt="Search" />
-            {searchValue && 
-            <img 
-            onClick={() => setSearchValue('')}
-            className="clear  cu-p" 
-            src="/img/btn-remove.svg" 
-            alt="Remove" />}
-            <input onChange={onChangeSearchInput} value={searchValue} placeholder="Поиск..." />
-         </div>
-         </div>
-
-         <div className="d-flex flex-wrap">
-           
-          {
-          items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item,index) => (            
-              <Card
-              key={index}
-              title={item.title}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              onFavourite = {(obj) => onAddToFavourite(item)}
-              onPlus={(obj) => onAddToCart(item) }
-              />
-            ))}
-
-         </div>
-
-    </div>
+    <Route path="/favourites" exact>
+      <Favourites items={favourites}               
+      />
+    </Route>
+      
     </div>
    
   );
