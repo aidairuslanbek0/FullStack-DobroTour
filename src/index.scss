@@ -5,6 +5,7 @@ body {
   font-family: 'Inter', system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:white;
   background-color: #e7f6ff;
 }
 
@@ -13,24 +14,24 @@ body {
 }
 
 .wrapper{
-  background: #a5ffc8;
+  background: #011a16;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
   max-width: 1120px;
   margin: 50px auto ;
   flex-wrap: wrap;
+
 }
 
  header{
 
-      border-radius: 15px;
-      background: #5CDB95;
-      box-shadow:  #5CDB95;
-   
-   
- }
+  background: linear-gradient(to top left, #023f2b , #023f2b);
+  box-shadow:  #04594e;
+  background: -webkit-gradient(linear, left top, right top, from(#023f2b), to(#023f2b), color-stop(0.5, #00a86b));
 
 
+} 
+ 
  h3,
  p{
    margin: 0;
@@ -72,8 +73,9 @@ body {
 
   
   .search-block{
-    background-color: #5CDB95;
-    border: 1px solid #5CDB95;
+    background: linear-gradient(to top left, #023f2b , #023f2b);
+    background: -webkit-gradient(linear, left top, right top, from(#023f2b), to(#023f2b), color-stop(0.5, #00a86b));
+    border: 1px solid #023f2b;
     border-radius: 8px;
     padding: 0 15px;
     position: relative;
@@ -88,7 +90,7 @@ body {
     }
 
     input{
-      background: #5CDB95;
+      background: #04594e;
       border: none;
       padding: 13px;
       font-size: 16px;
@@ -113,7 +115,8 @@ body {
     width: 420px;
     height: 100%;
     right: 0;
-    background: #c1ffd9;
+    background: linear-gradient(to top left, #012a30 , #012a30);
+    background: -webkit-gradient(linear, left top, right top, from(#012a30), to(#012a30), color-stop(0.5, #028052cb));
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
     padding: 30px;
     
@@ -136,7 +139,7 @@ body {
       li{     
       div{
         flex: 1; 
-        border-bottom: 1px dashed #5CDB95;
+        border-bottom: 1px dashed #116466;
         position: relative;
         top: -4px;
         margin: 0 7px;
@@ -181,7 +184,7 @@ body {
       }
     }
   .cartItem {
-    border: 1px solid #5CDB95;
+    border: 1px solid #116466;
     border-radius: 8px;
     overflow: hidden;
 
@@ -211,4 +214,31 @@ body {
     
   }
 
+  .footer{
+    background: linear-gradient(to top left, #023f2b , #023f2b);
+    background: -webkit-gradient(linear, left top, right top, from(#023f2b), to(#023f2b), color-stop(0.5, #00a86b));
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   
+    .contacts{
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+    }
+    .insta{
+      img{
+  
+        &:hover{
+          background: yellow 0.2s ease-in-out;
+        }
+      }
+    }
+
+  }
+
+   .middle_page{
+      opacity: 0.7;
+   }

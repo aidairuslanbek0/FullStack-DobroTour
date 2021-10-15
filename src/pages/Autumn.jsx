@@ -1,13 +1,31 @@
+import React from 'react'
 import Card from '../components/Card'
 
 
-function Autumn({items,
+function Autumn({
+                       items,
                        searchValue,
                        setSearchValue,
                        onChangeSearchInput,
                        onAddToFavourite,
-                       onAddToCart 
+                       onAddToCart,
+                       isLoading
                     }){
+
+                     const renderItems = () => {
+                        const filtredItems = items.filter((item) =>
+                          item.title.toLowerCase().includes(searchValue.toLowerCase()),
+                        );
+                        return (isLoading ? [...Array(8)] : filtredItems).map((item, index) => (
+                          <Card
+                            key={index}
+                            onFavourite={(obj) => onAddToFavourite(obj)}
+                            onPlus={(obj) => onAddToCart(obj)}
+                            loading={isLoading}
+                            {...item}
+                          />
+                        ));
+                     };
     return(
         <div className="content p-40 ">
          <div className="d-flex align-center justify-between mb-40">
@@ -24,21 +42,7 @@ function Autumn({items,
          </div>
          </div>
 
-         <div className="d-flex flex-wrap">
-           
-          {
-          items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item,index) => (            
-              <Card
-              key={index}
-              title={item.title}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              onFavourite = {(obj) => onAddToFavourite(item)}
-              onPlus={(obj) => onAddToCart(item) }
-              />
-            ))}
-
-         </div>
+         <div className="d-flex flex-wrap">{renderItems()}</div>
 
     </div>
     )
