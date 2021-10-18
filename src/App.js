@@ -12,8 +12,18 @@ import Winter from './pages/Winter'
 import Spring from './pages/Spring'
 import Summer from './pages/Summer'
 import AppContext from './context'
-
-
+import EasyAutumn from './components/categories/easy/Autumn'
+import MiddleAutumn from './components/categories/middle/Autumn'
+import HardAutumn from './components/categories/hard/Autumn'
+import EasyWinter from './components/categories/easy/Winter'
+import MiddleWinter from './components/categories/middle/Winter'
+import HardWinter from './components/categories/hard/Winter'
+import EasySpring from './components/categories/easy/Spring'
+import MiddleSpring  from './components/categories/middle/Spring'
+import HardSpring from './components/categories/hard/Spring'
+import EasySummer from './components/categories/easy/Summer'
+import MiddleSummer from './components/categories/middle/Summer'
+import HardSummer from './components/categories/hard/Summer'
 
 
 function App() {
@@ -125,6 +135,17 @@ const isItemAdded = (id) => {
     <Route path="/autumn" exact>
       <Autumn items = {items} 
             cartItems={cartItems}
+            // searchValue = {searchValue}
+            // setSearchValue = {setSearchValue}
+            // onChangeSearchInput = {onChangeSearchInput}
+            // onAddToFavourite = {onAddToFavourite}
+            // onAddToCart = {onAddToCart}
+            // isLoading = {isLoading}
+      />
+    </Route>
+    <Route path="/easyAutumn" exact>
+      <EasyAutumn items = {items} 
+            cartItems={cartItems}
             searchValue = {searchValue}
             setSearchValue = {setSearchValue}
             onChangeSearchInput = {onChangeSearchInput}
@@ -133,6 +154,31 @@ const isItemAdded = (id) => {
             isLoading = {isLoading}
       />
     </Route>
+    <Route path="/middleAutumn" exact>
+      <MiddleAutumn items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route>
+
+    <Route path="/hardAutumn" exact>
+      <HardAutumn items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route> 
+
+   
 
     <Route path="/winter" exact>
       <Winter items = {items} 
@@ -146,6 +192,43 @@ const isItemAdded = (id) => {
       />
     </Route>
 
+    <Route path="/easyWinter" exact>
+      <EasyWinter items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route>
+    <Route path="/middleWinter" exact>
+      <MiddleWinter items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route>
+
+    <Route path="/hardWinter" exact>
+      <HardWinter items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route> 
+
+   
+
     <Route path="/spring" exact>
       <Spring items = {items}
             cartItems={cartItems} 
@@ -158,6 +241,43 @@ const isItemAdded = (id) => {
       />
     </Route>
 
+    <Route path="/easySpring" exact>
+      <EasySpring items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route>
+    <Route path="/middleSpring" exact>
+      <MiddleSpring items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route>
+
+    <Route path="/hardSpring" exact>
+      <HardSpring items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route> 
+
+   
+
     <Route path="/summer" exact>
       <Summer items = {items} 
             cartItems={cartItems}
@@ -169,6 +289,43 @@ const isItemAdded = (id) => {
             isLoading = {isLoading}
       />
     </Route>
+
+    <Route path="/easySummer" exact>
+      <EasySummer items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route>
+    <Route path="/middleSummer" exact>
+      <MiddleSummer items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route>
+
+    <Route path="/hardSummer" exact>
+      <HardSummer items = {items} 
+            cartItems={cartItems}
+            searchValue = {searchValue}
+            setSearchValue = {setSearchValue}
+            onChangeSearchInput = {onChangeSearchInput}
+            onAddToFavourite = {onAddToFavourite}
+            onAddToCart = {onAddToCart}
+            isLoading = {isLoading}
+      />
+    </Route> 
+
+   
     
     <Route path="/favourites" exact>
       <Favourites onAddToFavourite={onAddToFavourite}               
