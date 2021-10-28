@@ -1,16 +1,20 @@
 import React from 'react'
 import Card from '../../../components/Card'
+import AppContext from '../../../context'
 
 
-function HardSpring({
-                       items,
-                       searchValue,
-                       setSearchValue,
-                       onChangeSearchInput,
-                       onAddToFavourite,
-                       onAddToCart,
-                       isLoading
-                    }){
+function HardSpring(){ 
+
+        const {
+                 items,
+                 searchValue,
+                 setSearchValue,
+                 onChangeSearchInput,
+                 onAddToFavourite,
+                 onAddToCart,
+                 isLoading,
+                 toLowerCase
+               } = React.useContext(AppContext)
 
                      const renderItems = () => {
                         const filtredItems = items.filter((item) =>

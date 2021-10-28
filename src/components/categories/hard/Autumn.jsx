@@ -1,17 +1,20 @@
 import React from 'react'
 import Card from '../../../components/Card'
+import AppContext from '../../../context';
 
 
-function HardAutumn({
-                       items,
-                       searchValue,
-                       setSearchValue,
-                       onChangeSearchInput,
-                       onAddToFavourite,
-                       onAddToCart,
-                       isLoading
-                    }){
+function HardAutumn(){
 
+     const {
+             items,
+             searchValue,
+             setSearchValue,
+             onChangeSearchInput,
+             onAddToFavourite,
+             onAddToCart,
+             isLoading
+            } = React.useContext(AppContext)
+ 
                      const renderItems = () => {
                         const filtredItems = items.filter((item) =>
                           item.title.toLowerCase().includes(searchValue.toLowerCase()),

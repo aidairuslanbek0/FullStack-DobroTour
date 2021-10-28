@@ -1,16 +1,18 @@
 import React from 'react'
 import Card from '../../../components/Card'
+import AppContext from '../../../context';
 
 
-function EasySpring({
-                       items,
-                       searchValue,
-                       setSearchValue,
-                       onChangeSearchInput,
-                       onAddToFavourite,
-                       onAddToCart,
-                       isLoading
-                    }){
+function EasySpring(){
+         const {
+                  items,
+                  searchValue,
+                  setSearchValue,
+                  onChangeSearchInput,
+                  onAddToFavourite,
+                  onAddToCart,
+                  isLoading
+                } = React.useContext(AppContext)
 
                      const renderItems = () => {
                         const filtredItems = items.filter((item) =>

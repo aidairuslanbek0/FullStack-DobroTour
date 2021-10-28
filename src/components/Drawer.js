@@ -1,4 +1,12 @@
+import React from 'react'
+import {useCart} from './hooks/useCart'
+
 function Drawer({ onClose,onRemove, items = []}){
+
+  const  {totalPrice} =  useCart()
+  // const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0)
+
+  
     return(
         <div className="overlay ">
          <div className="drawer">
@@ -37,13 +45,15 @@ function Drawer({ onClose,onRemove, items = []}){
               <li className="d-flex align-end mb-20">
                 <span>Итого:</span>
                 <div></div>
-                <b>7500</b>
+                <b>{totalPrice} сом</b>
               </li>
             </ul>
+            <a href="https://api.whatsapp.com/send/?phone=996502111109" target="_blank"  >
             <button className="greenButton">
               Оформить заказ
               <img src="/img/arrow.svg" alt="Arrow" />
             </button>
+            </a>
            </div>
                </div>
           
@@ -59,13 +69,8 @@ function Drawer({ onClose,onRemove, items = []}){
       </button>
       </div>
 
-         )}
+         )}       
 
-           
-
-         
-       
-             
         </div>
        </div>
 

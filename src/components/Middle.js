@@ -3,7 +3,7 @@ function Middle(){
     
       return (
         <div className="middle_page d-flex justify-center mt-20">
-          <img src="/img/photos/dobro2.jpg" />
+          {/* <img src="/img/photos/dobro2.jpg" /> */}
         </div>
 
 

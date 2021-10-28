@@ -1,28 +1,11 @@
-// import Card from '../components/Card'
 import {Link} from 'react-router-dom'
 import styles from './Pages.module.scss'
 
-function Home({        
-                       searchValue,
-                       setSearchValue,
-                       onChangeSearchInput,
-                    //    onAddToFavourite,
-                    //    onAddToCart 
-                    }){
+function Home(){
     return(
         <div className="content p-40 ">
-         <div className="d-flex align-center justify-between mb-40">
+         <div className="d-flex align-center justify-between mb-40 ">
          <h1>Все Туры  4  Сезона</h1>
-         {/* <div className="search-block d-flex">
-            <img src="img/search.svg" alt="Search" />
-            {searchValue && 
-            <img 
-            onClick={() => setSearchValue('')}
-            className="clear  cu-p" 
-            src="/img/btn-remove.svg" 
-            alt="Remove" />}
-            <input onChange={onChangeSearchInput} value={searchValue} placeholder="Поиск..." />
-         </div> */}
          </div>
 
          <div className="d-flex flex-wrap">
@@ -55,24 +38,7 @@ function Home({
          </div>
           </Link>
 
-
-
-
-           
-          {/* {
-          items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item,index) => (            
-              <Card
-              key={index}
-              title={item.title}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              onFavourite = {(obj) => onAddToFavourite(item)}
-              onPlus={(obj) => onAddToCart(item) }
-              />
-            ))} */}
-
          </div>
-
     </div>
     )
 }

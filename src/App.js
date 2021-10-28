@@ -24,6 +24,7 @@ import HardSpring from './components/categories/hard/Spring'
 import EasySummer from './components/categories/easy/Summer'
 import MiddleSummer from './components/categories/middle/Summer'
 import HardSummer from './components/categories/hard/Summer'
+import Orders from './pages/Orders'
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('')
   const [cartOpened, setCartOpened] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(true);
+
+  console.log(cartItems);
 
   React.useEffect(()=>{
    async function fetchData(){
@@ -76,6 +79,7 @@ const onAddToFavourite = async (obj) => {
   try{
     if(favourites.find((favObj) => favObj.id === obj.id)){
       axios.delete(`https://61610e44faa03600179fbc04.mockapi.io/favourite/${obj.id}`);
+      // setFavourites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
     }
     else{
       const {data} = await axios.post('https://61610e44faa03600179fbc04.mockapi.io/favourite', obj);
@@ -92,7 +96,7 @@ const onChangeSearchInput = (event) => {
 }
 
 const isItemAdded = (id) => {
-  return cartItems.some((obj) => Number(obj.parentId) === Number(id));
+  return cartItems.some((obj) => Number(obj.id) === Number(id));
 };
 
   return (
@@ -105,10 +109,11 @@ const isItemAdded = (id) => {
                                     onAddToCart,
                                     setCartOpened,
                                     setCartItems,
-                                    
-
+                                    searchValue,
+                                    isLoading,
+          
     }}>
-      <div className="wrapper clear">
+      <div className="wrapper clear ">
     
     {cartOpened && 
     <Drawer  
@@ -122,214 +127,83 @@ const isItemAdded = (id) => {
      />
    <Route path="/" exact>
       <Middle />
-      <Home items = {items} 
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <Home />
     </Route>
 
     <Route path="/autumn" exact>
-      <Autumn items = {items} 
-            cartItems={cartItems}
-            // searchValue = {searchValue}
-            // setSearchValue = {setSearchValue}
-            // onChangeSearchInput = {onChangeSearchInput}
-            // onAddToFavourite = {onAddToFavourite}
-            // onAddToCart = {onAddToCart}
-            // isLoading = {isLoading}
-      />
+      <Autumn  />
     </Route>
+
     <Route path="/easyAutumn" exact>
-      <EasyAutumn items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <EasyAutumn />
     </Route>
+
     <Route path="/middleAutumn" exact>
-      <MiddleAutumn items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <MiddleAutumn />
     </Route>
 
     <Route path="/hardAutumn" exact>
-      <HardAutumn items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <HardAutumn />
     </Route> 
 
    
 
     <Route path="/winter" exact>
-      <Winter items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <Winter />
     </Route>
 
     <Route path="/easyWinter" exact>
-      <EasyWinter items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <EasyWinter />
     </Route>
+
     <Route path="/middleWinter" exact>
-      <MiddleWinter items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <MiddleWinter />
     </Route>
 
     <Route path="/hardWinter" exact>
-      <HardWinter items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
-    </Route> 
-
-   
+      <HardWinter />
+    </Route>    
 
     <Route path="/spring" exact>
-      <Spring items = {items}
-            cartItems={cartItems} 
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <Spring />
     </Route>
 
     <Route path="/easySpring" exact>
-      <EasySpring items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <EasySpring />
     </Route>
+
     <Route path="/middleSpring" exact>
-      <MiddleSpring items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <MiddleSpring />
     </Route>
 
     <Route path="/hardSpring" exact>
-      <HardSpring items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
-    </Route> 
-
-   
+      <HardSpring />
+    </Route>    
 
     <Route path="/summer" exact>
-      <Summer items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <Summer />
     </Route>
 
     <Route path="/easySummer" exact>
-      <EasySummer items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <EasySummer />
     </Route>
+
     <Route path="/middleSummer" exact>
-      <MiddleSummer items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <MiddleSummer />
     </Route>
 
     <Route path="/hardSummer" exact>
-      <HardSummer items = {items} 
-            cartItems={cartItems}
-            searchValue = {searchValue}
-            setSearchValue = {setSearchValue}
-            onChangeSearchInput = {onChangeSearchInput}
-            onAddToFavourite = {onAddToFavourite}
-            onAddToCart = {onAddToCart}
-            isLoading = {isLoading}
-      />
+      <HardSummer />
     </Route> 
 
    
     
     <Route path="/favourites" exact>
-      <Favourites onAddToFavourite={onAddToFavourite}               
-      />
+      <Favourites />
+    </Route>
+      
+    <Route path="/orders" exact>
+      <Orders />
     </Route>
       
       <Footer/>
